@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a324c">
+  <meta name="msapplication-navbutton-color" content="#1a324c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description"
+    content="Read about how I got started as a front end developer, my experience, skills and tech stack.">
+  <link rel="stylesheet" href="static/css/main.css" />
+  <link rel="stylesheet" href="static/css/page.css" />
+  <link rel="stylesheet" href="static/css/about.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3FM96129M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y3FM96129M');
+  </script>
+
+  <title>Naoures Hamrouni: About Me</title>
+</head>
+
+<body>
+  <a href="#main" class="skip-to-main-content">Skip to main content</a>
+  <nav class="visible">
+    <div class="container">
+      <a href="/" class="nav-logo" title="Back to Homepage">
+        Naoures Hamrouni
+      </a>
+      <div class="nav-links">
+        <a href="about" class="link active">about</a>
+        <a href="projects" class="link">projects</a>
+        <a href="articles" class="link">articles</a>
+        <div class="social-media">
+          <a href="https://github.com/Nawres2020" title="Github">
+                        <i class="demo-icon icon-github-circled" aria-hidden="true"></i>
+            <span class="visually-hidden">Github</span>
+          </a>
+          <a href="https://www.kaggle.com/nawreshamrouni" title="Kaggle">
+            <i class="demo-icon icon-kaggle" aria-hidden="true"></i>
+            <span class="visually-hidden">Kaggle</span>
+          </a>
+          <a href="https://medium.com/@naouresatidel.hamrouni" title="Medium">
+            <i class="demo-icon icon-medium" aria-hidden="true"></i>
+            <span class="visually-hidden">Medium</span>
+          </a>
+          <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/" title="LinkedIn">
+            <i class="demo-icon icon-linkedin" aria-hidden="true"></i>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <button id="menu-display" title="Show Menu" class="hamburger">
+
+        </button>
+        <button id="theme-display" title="Select a color scheme" class="control">
+          <i aria-hidden="true" class="demo-icon icon-cog"></i>
+          <span class="visually-hidden">Select a color scheme</span>
+        </button>
+      </div>
+      <div class="theme-container">
+        <button class="light theme-select" id="light-select" onclick="setTheme('light')" aria-label="Set light theme">
+          <div class="theme-label">
+            Light
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="dark theme-select" id="dark-select" onclick="setTheme('dark')"
+          onkeydown="(e) => setThemeKey(e, 'dark')" aria-label="Set dark theme">
+          <div class="theme-label">
+            Dark
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="brown theme-select" id="brown-select" onclick="setTheme('brown')" aria-label="Set brown theme">
+          <div class="theme-label">
+            Brown
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="green theme-select" id="green-select" onclick="setTheme('green')" aria-label="Set green theme">
+          <div class="theme-label">
+            Green
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="pink theme-select" id="pink-select" onclick="setTheme('pink')" aria-label="Set pink theme">
+          <div class="theme-label">
+            Pink
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="neon theme-select" id="neon-select" onclick="setTheme('neon')" aria-label="Set pink theme">
+          <div class="theme-label">
+            Neon
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main id="main">
+    <section id="about" class="container">
+      <div class="profile-section">
+        <div class="profile-content">
+          <h2 class="section-title">Hello, I'm Naoures Hamrouni <span class="title-icon">&#128153;</span></h2>
+          <p class="intro">
+            <span class="highlight">I am Naoures Hamrouni,</span> a dynamic <strong>Machine Learning Engineer</strong> with a strong academic foundation and practical experience. 
+            I hold a master's degree in Machine Learning and Computer Vision from the <strong>University of Padova</strong>, coupled with an engineering degree from the 
+            <strong>Higher School of Communication of Tunisia</strong>.
+          </p>
+          <p class="intro">
+            My expertise spans <strong>AI</strong>, <strong>computer vision</strong>, and <strong>full-stack web development</strong>, with a proven track record of delivering impactful solutions.
+          </p>
+          <p class="intro">
+            I thrive on working with data, particularly in <span class="emphasis">health-related applications</span>, leveraging cutting-edge technologies like 
+            <strong>TensorFlow</strong>, <strong>PyTorch</strong>, and <strong>OpenCV</strong> to solve complex problems. Beyond my passion for AI, I enjoy contributing to 
+            the tech community by working as a <strong>freelance web developer</strong>, where I bring innovative designs and robust functionality to life.
+          </p>
+          <p class="intro">
+            I also actively participate in data science challenges, sharing innovative solutions on <a href="https://www.kaggle.com/nawreshamrouni" target="_blank">Kaggle</a>, 
+            and I enjoy writing technical articles to share insights and discoveries.
+          </p>
+          
+        </div>
+        <div class="image-container">
+          <img src="portrait.jpg" alt="Naoures Hamrouni at her graduation ceremony" width="450" height="300" style="display: block; margin: 0 auto;" />
+        </div>
+      </div>
+   
+      
+    </section>
+
+
+    
+    <section id="history" class="container inner-container">
+      <details>
+        <summary>
+          <h2 class="subsection-title">
+            History
+          </h2>
+        </summary>
+
+          <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-date">2017 - 2019</div>
+                <div class="timeline-content">
+                  <h3>Preparatory School</h3>
+                  <p>
+                    I began my academic journey at the <strong> School of Science and Technology of Tunisia </strong>
+                    , where I ranked 52nd out of nearly 900 candidates. 
+                    During this period, I focused on physics and chemistry, building a strong foundation to pursue advanced engineering studies.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">2019 - 2022</div>
+                <div class="timeline-content">
+                  <h3>Engineering Degree In ICT </h3>
+                  <p>
+                    I pursued my engineering degree at the <strong>Higher School of Communication of Tunisia</strong>, 
+                    specializing in Information and Communication Technologies. 
+                    During this period, I developed a strong foundation in software development, computer vision, and machine learning.
+                  </p>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-date">2022 - 2024</div>
+                <div class="timeline-content">
+                  <h3>Master's Degree In Machine Learning </h3>
+                  <p>
+                    I further advanced my studies with a <strong>Master's in Machine Learning and Computer Vision</strong> at the 
+                    <strong>University of Padova</strong>. Here, I worked on innovative projects, including applying AI to healthcare 
+                    and real-world problem-solving in computer vision.
+                  </p>
+                </div>
+              </div>
+            </div>
+      </details>
+    </section>
+
+
+
+    <section id="experience" class="container inner-container">
+      <details>
+        <summary>
+          <h2 class="subsection-title">
+            Experience
+          </h2>
+        </summary>
+        <div class="main-text">
+          <div class="text">
+            <h3 class="text-header"><b>Freelance Developer</b> — <i>Self-Employed</i></h3>
+            <p class="text-subtitle">JANUARY 2022 - PRESENT | Remote</p>
+            <ul>
+              <li>Collaborated with startups to design and develop prototype websites, enabling them to showcase their initial ideas and concepts effectively.</li>
+              <li>Created functional and visually appealing prototypes tailored to client requirements, focusing on responsive design and seamless user experiences.</li>
+              <li>Built full-stack applications using modern web technologies, including Flask and Django, integrated with PostgreSQL and SQL databases for robust data management.</li>
+              <li>Developed and maintained websites using CMS platforms like WordPress, providing flexible and scalable solutions for clients.</li>
+              <li>Implemented frontend features with HTML, CSS, JavaScript, TypeScript, and Angular, ensuring dynamic and interactive user interfaces.</li>
+              <li>Utilized GitHub for version control and collaborative development, maintaining clean and well-documented codebases.</li>
+            </ul>
+            <div>
+              <b>Technologies Used:</b>
+              <div class="technology-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" alt="Flask" title="Flask" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" title="Django" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" title="PostgreSQL" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" title="TypeScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/angularjs/angularjs-original.svg" alt="Angular" title="Angular" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-original.svg" alt="WordPress" title="WordPress" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="GitHub" title="GitHub" />
+              </div>
+            </div>
+          </div>
+          
+          <div class="text">
+            <h3 class="text-header"><b>Machine Learning Engineer</b> — <a href="https://www.esigelec.fr/fr/irseem" target="_blank" rel="noopener">IRSEEM Laboratory</a></h3>
+            <p class="text-subtitle">Sep 2024 - PRESENT | Rouen, France</p>
+            <ul>
+              <li>
+                Working as a Machine Learning Engineer and Development Engineer to design innovative solutions for the IRSEEM Laboratory.
+              </li>
+              <li>
+               Developing a computer vision solution utilizing sensors such as the Zed Box Orin and the Zed 2i Stereo Camera. 
+              </li>
+              <li>
+                The system focuses on object detection and human gesture recognition, leveraging the capabilities of these advanced sensors to achieve accurate and efficient results. 
+              </li>
+              <li>
+                By combining the power of these hardware tools with robust algorithms, the project aims to deliver cutting-edge solutions for real-time visual analysis.
+              </li>
+            </ul>
+            <div class="technologies">
+              <p><b>Technologies Used:</b></p>
+              <div class="technology-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras" title="Keras" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" title="OpenCV" />
+
+                <img src="pyyologo.png" alt="YOLO" title="YOLO" />
+
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" title="Django" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" alt="Jupyter" title="Jupyter" />
+                <img src="colab.png" alt="Google Colab" title="Google Colab" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" title="PyTorch" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" title="Pandas" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" title="NumPy" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" alt="Matplotlib" title="Matplotlib" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" title="Git" />
+              </div>
+            
+              
+            </div>
+          </div>
+          
+
+          <div class="text">
+            <h3 class="text-header"><b>Master's Thesis</b> — <a href="https://www.segulatechnologies.com/" target="_blank" rel="noopener">SEGULA Technologies</a></h3>
+            <p class="text-subtitle">MARCH 2024 - AUGUST 2024 | France</p>
+            <ul>
+              <li>Developed and proposed a metal object detection system for warehouses and large environments, leveraging AI and RFID technology to detect and localize object placement.</li>
+              <li>Designed and implemented two algorithms to test scenarios involving the detection of different object sizes and their placement variations.</li>
+              <li>Conducted comprehensive testing to evaluate the system's accuracy and reliability under various conditions, optimizing detection and localization performance.</li>
+            </ul>
+            <div class="technologies">
+              <p><b>Technologies Used:</b></p>
+              <div class="technology-icons">
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" title="TensorFlow" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras" title="Keras" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" title="OpenCV" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" title="Django" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" title="Docker" />
+              </div>
+              
+            </div>
+          </div>
+          
+          
+          
+
+
+
+          <div class="text">
+            <h3 class="text-header"><b>Full-Stack Engineering Intern</b> — <a href="https://www.infineon.com/" target="_blank" rel="noopener">Infineon Technologies</a></h3>
+            <p class="text-subtitle">APRIL 2023 - OCTOBER 2023 | Padova , Italy </p>
+            <ul>
+              <ul>
+                <li>Proposed, designed, and developed a simulation web platform tailored for the simulation team, integrating real-time simulation capabilities with tools used by Infineon such as Jira and SQL databases.</li>
+                <li>Enabled seamless management of simulations, allowing users to view, manipulate, and create simulation projects, check existing workflows, and assign tasks through a robust admin interface.</li>
+                <li>Implemented a role-based permissions system, providing different levels of access for users to ensure secure and efficient collaboration across teams.</li>
+              </ul>
+                <b>Technologies Used:</b>
+                <div class="technology-icons">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" title="Django" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="SQL" title="SQL" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" title="HTML" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" title="CSS" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" alt="Bitbucket" title="Bitbucket" />
+                  <img src="https://img.icons8.com/color/48/api-settings.png" alt="REST API" title="REST API" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/json/json-original.svg" alt="JSON" title="JSON" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/xml/xml-original.svg" alt="XML" title="XML" />
+                  <img src="https://img.icons8.com/color/48/flow-chart.png" alt="UML" title="UML" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bitbucket/bitbucket-original.svg" alt="Bitbucket" title="Bitbucket" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original.svg" alt="Jira" title="Jira" />
+                </div>
+              </li>
+              
+            </ul>
+          </div>
+          
+
+          <div class="text">
+            <h3 class="text-header"><b>AI & Computer Vision Intern</b> — <a href="https://ietr.fr/" target="_blank" rel="noopener">IETR</a></h3>
+            <p class="text-subtitle">MARCH 2022 - SEPTEMBER 2022 | France</p>
+            <ul>
+              <li>Developed a calibration system for object detection by enabling two sensors to communicate via ROS, sending real-time image statuses for accurate and efficient calibration.</li>
+              <li>
+                <b>Technologies Used:</b>
+                <div class="technology-icons">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" title="C++" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" title="OpenCV" />
+                  <img src="ros.png"  alt="ROS" title="ROS (Robot Operating System)" />
+                  <img src="https://img.icons8.com/color/48/tensorflow.png" alt="TensorFlow" title="TensorFlow" />
+                  <img src="https://img.icons8.com/color/48/ai.png" alt="AI" title="Artificial Intelligence" />
+                  <img src="visp-logo.png" alt="ViSP" title="ViSP (Visual Servoing Platform)" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" alt="Linux" title="Linux" />
+                </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+
+
+
+
+          <div class="text">
+            <h3 class="text-header"><b>AI Intern</b> — <a href="https://www.latis-research.fr/" target="_blank" rel="noopener">LATIS</a></h3>
+            <p class="text-subtitle">JULY 2021 - SEPTEMBER 2021 | France</p>
+            <ul>
+              <li>Developed a system leveraging the Leap Motion controller for gesture recognition and interpretation to control DICOM images.</li>
+              <li>
+                <b>Technologies Used:</b>
+                <div class="technology-icons">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+                  <img src="Kivy_logo.png" alt="Kivy" title="Kivy" />
+                  <img src="https://img.icons8.com/color/48/ai.png" alt="Artificial Intelligence" title="Artificial Intelligence" />
+                  <img src="https://img.icons8.com/color/48/database.png" alt="SQL" title="SQL (Structured Query Language)" />
+                  <img src="dicom.png" alt="Medical Imaging" title="Medical Imaging (DICOM)" />
+                  <img src="leap_motion.jpg"  alt="Leap Motion Controller" title="Leap Motion Controller" />
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+
+
+
+        </div>
+      </details>
+    </section>
+    <section id="volunteering" class="container inner-container">
+      <details>
+        <summary>
+          <h2 class="subsection-title">
+            Volunteering
+          </h2>
+        </summary>
+        <div class="main-text">
+          <div class="text">
+
+            <div class="text">
+              <h3 class="text-header"><b>Club President</b> — <a href="https://www.facebook.com/LeadINGSupcom" target="_blank" rel="noopener">LeadING SUP'COM</a></h3>
+              <p class="text-subtitle">MARCH 2021 - SEPTEMBER 2021 | Tunisia</p>
+              <ul>
+                <li>Led the organization's mission to develop leadership skills among engineering students, aiming to become the premier club for Tunisian engineers.</li>
+                <li>Organized events and workshops focused on enhancing soft skills and leadership qualities in future engineers.</li>
+                <li>Promoted the club's vision and slogan: "Born to be a LEADER, Born to be an ENGINEER."</li>
+              </ul>
+              <div class="image-gallery">
+                <img src="leading1.jpg" alt="Event 1" title="Leadership Workshop" />
+                <img src="leading2.jpg" alt="Event 2" title="Team Meeting" />
+                <img src="leading3.jpg" alt="Event 3" title="Club Activity" />
+                <img src="leading4.jpg" alt="Event 3" title="Club Activity" />
+              </div>
+            </div>
+            
+
+
+            <div class="text">
+              <h3 class="text-header"><b>Secretary General</b> — <a href="https://www.facebook.com/LeadINGSupcom" target="_blank" rel="noopener">LeadING SUP'COM</a></h3>
+              <p class="text-subtitle">SEPTEMBER 2020 - MARCH 2021 | Tunisia</p>
+              <ul>
+                <li>Managed administrative tasks and coordinated communication within the club.</li>
+                <li>Assisted in planning and executing events aimed at developing leadership and soft skills among members.</li>
+                <li>Supported the President and executive team in achieving the club's mission and vision.</li>
+              </ul>
+            </div>
+
+
+            <div class="text">
+              <h3 class="text-header"><b>Member</b> — <a href="https://aiesec.org/" target="_blank" rel="noopener">AIESEC in Tunisia</a></h3>
+              <p class="text-subtitle">FEBRUARY 2021 - AUGUST 2021 | Tunisia</p>
+              <ul>
+                <li>Participated in the Outgoing Global Talent (OGT) department, helping individuals find international internship opportunities.</li>
+                <li>Developed leadership skills through active participation in local and national conferences, workshops, and team projects.</li>
+                <li>Collaborated with a diverse team to promote cultural exchange and global responsibility among youth.</li>
+              </ul>
+              <div class="image-gallery">
+                <img src="aisec1.jpg" alt="Event 1" title="Leadership Workshop" />
+                <img src="aisec2.jpg" alt="Event 2" title="Team Meeting" />
+             </div>
+            </div>
+            </div>
+        </div>
+      </details>
+    </section>
+    <section id="skills" class="container inner-container">
+      <details>
+        <summary>
+          <h2 class="subsection-title">
+            Skills
+          </h2>
+        </summary>
+        <div class="main-text list">
+          <div class="text">
+            <h3 class="text-header">Languages</h3>
+            <ul class="tags">
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>TypeScript</li>
+              <li>c++</li>
+              <li>SQL</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h3 class="text-header">Frameworks</h3>
+            <ul class="tags">
+              <li>Flask</li>
+              <li>Django</li>
+              <li>FastAPI</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h3 class="text-header">Web Development</h3>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>WordPress</li>
+              <li>TypeScript</li>
+              <li>Angular</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h3 class="text-header">Version Control & Containerization</h3>
+            <ul class="tags">
+              <li>Git</li>
+              <li>Bitbucket</li>
+              <li>Docker</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h3 class="text-header">AI & Computer Vision</h3>
+            <ul class="tags">
+              <li>TensorFlow</li>
+              <li>Keras</li>
+              <li>OpenCV</li>
+              <li>YOLO</li>
+              <li>PyTorch</li>
+              <li>Scikit-learn</li>
+              <li>Jupyter</li>
+              <li>SciPy</li>
+              <li>Numpy</li>
+              <li>Pandas</li>
+              <li>Matplotlib</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h3 class="text-header">Software Development</h3>
+            <ul class="tags">
+              <li>UML</li>
+              <li>RESTful APIs</li>
+              <li>Real-Time Data Processing</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h3 class="text-header">Other Tools</h3>
+            <ul class="tags">
+              <li>XML</li>
+              <li>JSON</li>
+              <li>Data Modeling</li>
+              <li>Debugging</li>
+            </ul>
+          </div>
+          <div class="text">
+            <h3 class="text-header">Soft Skills</h3>
+            <ul class="tags">
+              <li>Creativity</li>
+              <li>Team Collaboration</li>
+              <li>Dynamic</li>
+              <li>Problem-Solving</li>
+              <li>Time Management</li>
+              <li>Autonomy</li>
+            </ul>
+          </div>
+        </div>
+        
+
+
+        </div>
+      </details>
+    </section>
+
+    <div class="section-link container inner-container">
+      <a href="https://drive.google.com/file/d/1J34cGN9CINwFzRIv95PvDCObxQY94sGY/view?usp=sharing"
+        class="link-btn">Download My Resume</a>
+    </div>
+
+  </main>
+  <div class="page-nav container">
+    <a href="/">&#8592; Home</a>
+    <a href="projects">Projects &#8594;</a>
+  </div>
+  <div class="wave-border top">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" role="presentation">
+      <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+        style="stroke: none; fill: var(--shade-100)"></path>
+      <path class="neon-path" d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98"
+        style="stroke: var(--neon-color);fill: none;"></path>
+    </svg>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="social-media">
+        <a href="https://github.com/Nawres2020" title="Github">
+                      <i class="demo-icon icon-github-circled" aria-hidden="true"></i>
+          <span class="visually-hidden">Github</span>
+        </a>
+        <a href="https://www.kaggle.com/nawreshamrouni" title="Kaggle">
+          <i class="fas fa-database" aria-hidden="true"></i> 
+          <span class="visually-hidden">Kaggle</span>
+        </a>
+        <a href="https://medium.com/@naouresatidel.hamrouni" title="Medium">
+          <i class="demo-icon icon-medium" aria-hidden="true"></i>
+          <span class="visually-hidden">Medium</span>
+        </a>
+        <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/" title="LinkedIn">
+          <i class="demo-icon icon-linkedin" aria-hidden="true"></i>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+      </div>
+      <div class="copyright">
+        &copy; designed & built by <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/">Naoures Hamrouni</a> <span
+          class="heart">&hearts;</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<script src="./static/js/index.js"></script>
+<script src="./static/js/about.js"></script>
+
+</html>
+
+
+<style>
+/* General styles for the timeline */
+.timeline {
+  position: relative;
+  padding: 10px 0;
+  border-left: 2px solid var(--shade-300); /* Use theme variable */
+  margin-left: 20px;
+  background-color: var(--background-color); /* Adapts to theme */
+  color: var(--text-color); /* Adapts to theme */
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+  padding-left: 20px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-date {
+  font-weight: bold;
+  font-size: 20px;
+  color: var(--shade-300); /* Use theme variable */
+}
+
+.timeline-content {
+  position: relative;
+  padding: 10px 15px;
+  background: var(--shade-100); /* Adapts to theme */
+  border: 1px solid var(--shade-300); /* Use theme variable */
+  border-radius: 5px;
+  margin-left: 20px;
+  color: var(--text-color); /* Adapts to theme */
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  font-size: 25px;
+  color: var(--shade-500); /* Use theme variable */
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  width: 15px;
+  height: 15px;
+  background: var(--shade-300); /* Use theme variable */
+  border-radius: 50%;
+  border: 2px solid var(--background-color); /* Use theme variable */
+  box-shadow: 0 0 0 2px var(--shade-300);
+}
+
+
+
+
+.technologies {
+  margin-top: 15px;
+}
+
+.technology-icons {
+  display: flex;
+  flex-wrap: wrap; /* Allow logos to wrap on smaller screens */
+  gap: 10px; /* Space between icons */
+  margin-top: 10px;
+}
+
+.technology-icons img {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+
+.technology-icons img:hover {
+  transform: scale(1.2); /* Slight zoom effect on hover */
+  cursor: pointer;
+}
+
+
+
+
+
+
+.image-gallery {
+  display: flex;
+  gap: 10px; /* Space between images */
+  margin-top: 15px; /* Space above the gallery */
+}
+
+.image-gallery img {
+  width: 30%; /* Adjust width for three images */
+  border-radius: 5px; /* Optional: Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Shadow effect */
+  object-fit: cover; /* Ensures proper cropping */
+}
+
+.image-gallery img:hover {
+  transform: scale(1.05); /* Slight zoom on hover */
+  transition: transform 0.3s ease;
+}
+
+.section-title {
+  font-family: 'Arial', sans-serif; /* Choose a clean or custom font */
+  font-size: 2.5rem; /* Adjust size for emphasis */
+  font-weight: bold; /* Make the title stand out */
+  color: var(--text-color); /* Dynamically adapt text color */
+  text-align: center; /* Center-align the title */
+  margin-bottom: 20px; /* Add spacing below */
+  position: relative; /* For decorative elements */
+}
+
+.section-title .title-icon {
+  font-size: 2rem; /* Adjust icon size relative to the text */
+  color: var(--secondary-color); /* Use theme-specific color for the icon */
+  margin-left: 10px; /* Add spacing between the text and the icon */
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px; /* Decorative underline */
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--shade-100)
+  ); /* Gradient effect from theme colors */
+  margin: 10px auto 0; /* Center underline and space */
+  border-radius: 5px; /* Smooth corners */
+}
+
+
+
+</style>

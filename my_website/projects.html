@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a324c">
+  <meta name="msapplication-navbutton-color" content="#1a324c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="All the webpages, websites and applications I've created.">
+  <link rel="stylesheet" href="static/css/main.css" />
+  <link rel="stylesheet" href="static/css/page.css" />
+  <link rel="stylesheet" href="static/css/projects.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3FM96129M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y3FM96129M');
+  </script>
+
+  <title>Naoures Hamrouni: Projects</title>
+</head>
+
+<body>
+  <a href="#main" class="skip-to-main-content">Skip to main content</a>
+  <nav class="visible">
+    <div class="container">
+      <a href="/" class="nav-logo" title="Back to Homepage">
+       Naoures Hamrouni
+      </a>
+      <div class="nav-links">
+        <a href="about" class="link">about</a>
+        <a href="projects" class="link active">projects</a>
+        <a href="articles" class="link">articles</a>
+        <div class="social-media">
+          <a href="https://github.com/Nawres2020" title="Github">
+                        <i class="demo-icon icon-github-circled" aria-hidden="true"></i>
+            <span class="visually-hidden">Github</span>
+          </a>
+          <a href="https://www.kaggle.com/nawreshamrouni" title="Kaggle">
+            <i class="fas fa-database" aria-hidden="true"></i> 
+            <span class="visually-hidden">Kaggle</span>
+          </a>
+          <a href="https://medium.com/@naouresatidel.hamrouni" title="Medium">
+            <i class="demo-icon icon-medium" aria-hidden="true"></i>
+            <span class="visually-hidden">Medium</span>
+          </a>
+          <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/" title="LinkedIn">
+            <i class="demo-icon icon-linkedin" aria-hidden="true"></i>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <button id="menu-display" title="Show Menu" class="hamburger">
+
+        </button>
+        <button id="theme-display" title="Select a color scheme" class="control">
+          <i aria-hidden="true" class="demo-icon icon-cog"></i>
+          <span class="visually-hidden">Select a color scheme</span>
+        </button>
+      </div>
+      <div class="theme-container">
+        <button class="light theme-select" id="light-select" onclick="setTheme('light')" aria-label="Set light theme">
+          <div class="theme-label">
+            Light
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="dark theme-select" id="dark-select" onclick="setTheme('dark')"
+          onkeydown="(e) => setThemeKey(e, 'dark')" aria-label="Set dark theme">
+          <div class="theme-label">
+            Dark
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="brown theme-select" id="brown-select" onclick="setTheme('brown')" aria-label="Set brown theme">
+          <div class="theme-label">
+            Brown
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="green theme-select" id="green-select" onclick="setTheme('green')" aria-label="Set green theme">
+          <div class="theme-label">
+            Green
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="pink theme-select" id="pink-select" onclick="setTheme('pink')" aria-label="Set pink theme">
+          <div class="theme-label">
+            Pink
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="neon theme-select" id="neon-select" onclick="setTheme('neon')" aria-label="Set pink theme">
+          <div class="theme-label">
+            Neon
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main id="main">
+    <section class="container">
+      <h1 class="section-title">Projects <span class="title-icon">&#128187;</span></h1>
+      <p class="section-subtitle">
+
+      As an AI enthusiast and web developer, I have worked on various projects to enrich my skills and portfolio.
+      These projects showcase my ability to combine artificial intelligence and modern web technologies to create impactful solutions, demonstrating my dedication to innovation and problem-solving.
+
+      </p>  
+
+
+    <section id="apps" class="container">
+  <h2 class="subsection-title">
+    Predict Bone Age from Hand Radiographs
+  </h2>
+  <div class="main-text">
+    <div class="project">
+        <div class="project-images">
+          <img src="./static/images/projects/project1111.png" alt="Image 1">
+          <img src="./static/images/projects/project1.png" alt="Image 2">
+          <img src="./static/images/projects/project11.png" alt="Image 3">
+        </div>
+      <div class="project-text">
+        <p>
+          This project aims to predict bone age from hand radiographs using advanced deep learning techniques. The project involves:
+          <ul>
+            <li>Utilizing state-of-the-art convolutional neural networks (CNNs) like Inception and EfficientNet for feature extraction.</li>
+            <li>Implementing image pre-processing methods such as resizing, contrast adjustment, and normalization to optimize radiograph analysis.</li>
+            <li>Performing model evaluation with metrics such as Mean Absolute Error (MAE) to assess prediction accuracy and model robustness.</li>
+            <li>Addressing challenges in medical imaging, including variable image quality and clinical data variability.</li>
+          </ul>
+          The project showcases a pipeline where input radiographs undergo data augmentation and pre-processing before being fed into trained models for accurate bone age prediction. This application holds significant potential for pediatric healthcare, automating a crucial diagnostic process.
+        </p>
+        <ul class="project-tags">
+          <li>Python</li>
+          <li>TensorFlow</li>
+          <li>Keras</li>
+          <li>OpenCV</li>
+          <li>EfficientNet</li>
+          <li>Inception</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nawres2020/Predict-bone-age-from-hand-radiographs" target="_blank" rel="noopener">Source Code</a>
+          <a href="./static/documents/Bone_Age_Prediction.pdf" target="_blank" rel="noopener">Project Details (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    
+
+
+
+<section id="apps" class="container">
+  <h2 class="subsection-title">Image Recoloring with conditional GANs</h2>
+  <div class="main-text project-scroll">
+          <div class="project">
+            <div class="project-images">
+              <img src="./static/images/projects/recoloration1.jpg" alt="Image 1">
+              <img src="./static/images/projects/recoloration2.png" alt="Image 2">
+              <img src="./static/images/projects/recoloration3.png" alt="Image 3">
+            </div>
+
+    <section id="apps" class="container">         
+      <div class="project-text">
+        <p>
+          This project aims to explore innovative approaches to image recoloration using conditional Generative Adversarial Networks (cGANs). The objectives include:
+          Developing three unique models based on the Pix2Pix framework to recolor grayscale images into vibrant RGB or LAB formats.
+          Introducing enhancements such as perceptual loss (LPIPS) and WGAN loss to improve the quality and diversity of generated images.
+          Leveraging a U-Net generator and PatchGAN discriminator for accurate pixel-level mappings and robust adversarial training.
+          Implementing a robust evaluation framework utilizing metrics such as FID, IS, SSIM, PSNR, and MAE to assess performance and diversity.
+          The project highlights the challenges of recoloring images, including ensuring high fidelity, preserving structural consistency, and maintaining perceptual quality. Extensive experiments demonstrate that the model with perceptual loss yields the most diverse and visually appealing recolored images.
+        </p>
+        <ul class="project-tags">
+          <li>Python</li>
+          <li>Pix2Pix</li>
+          <li>WGAN</li>
+          <li>LPIPS</li>
+          <li>Mini-ImageNet</li>
+          <li>Deep Learning</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nawres2020/Image-Recoloring-with-conditional-GANs/tree/main" target="_blank" rel="noopener">Source Code</a>
+          <a href="./static/documents/gan_project.pdf" target="_blank" rel="noopener">Project Details (PDF)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="apps" class="container">
+  <h2 class="subsection-title">Image Completion with Feature Descriptors</h2>
+  <div class="main-text project-scroll">
+    <div class="project">
+      <div class="project-images">
+        <img src="./static/images/projects/venice0.jpg" alt="Image 1">
+        <img src="./static/images/projects/venice1.PNG" alt="Image 2">
+        <img src="./static/images/projects/pratodellavalle0.jpg" alt="Image 3">
+        <img src="./static/images/projects/pratodellavalle1.jpg" alt="Image 3">
+      </div>
+      <section id="apps" class="container">         
+        <div class="project-text">
+            <p>
+              This project focuses on developing a computer vision algorithm for **image completion**, which automatically finds and corrects missing or corrupted areas in an image using provided patches. The project involves:
+                Loading corrupted images and patches and preprocessing them with equalization, Gaussian blur, and sharpening techniques.
+                Extracting SIFT features from images and patches to identify keypoints and descriptors.
+                Matching features between the image and patches using ORB and SIFT descriptors and refining matches with distance ratio tests.
+                Computing the affine transformation matrix with RANSAC to overlay patches onto the corrupted image.
+                Using the homography matrix to seamlessly blend patches into the image, restoring the corrupted regions.
+                The final implementation provides accurate restoration of missing image regions, leveraging robust feature matching and transformation techniques.
+            </p>
+          <ul class="project-tags">
+            <li>Computer Vision</li>
+            <li>Image Completion</li>
+            <li>Feature Matching</li>
+            <li>Patch Restoration</li>
+            <li>SIFT Features</li>
+            <li>ORB Descriptors</li>
+            <li>Keypoint Detection</li>
+            <li>Image Preprocessing</li>
+            <li>Gaussian Blur</li>
+            <li>Image Sharpening</li>
+            <li>Affine Transformation</li>
+            <li>Homography Matrix</li>
+            <li>Feature Descriptors</li>
+            <li>Image Restoration</li>
+            <li>Image Inpainting</li>
+            <li>Feature Matching Algorithms</li>
+            <li>Visual Computing</li>
+            <li>Geometric Transformations</li>
+            <li>Image Reconstruction</li>
+          </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nawres2020/Image-Completion-with-Feature-Descriptors" target="_blank" rel="noopener">Source Code</a>
+          <a href="./static/documents/Image_Completion_Project.pdf" target="_blank" rel="noopener">Project Details (PDF)</a>
+        </div>
+      </div>
+      </section>
+    </div>
+  </div>
+</section>
+
+   
+<section id="apps" class="container">
+  <h2 class="subsection-title">
+    Detect Parkinson's Disease with Machine Learning
+  </h2>
+  <div class="main-text">
+    <div class="project">
+      <div class="project-images">
+        <img src="./static/images/projects/parkin1.png" alt="Image 1">
+        <img src="./static/images/projects/parkin2.png" alt="Image 2">
+        <img src="./static/images/projects/parkin3.png" alt="Image 3">
+      </div>
+
+      <div class="project-text">
+        <p>
+          This project leverages machine learning to detect Parkinson's Disease from clinical data. 
+            Data preprocessing techniques, such as feature scaling and normalization, to prepare datasets for analysis.
+            Application of various machine learning algorithms like Support Vector Machines (SVMs), Random Forest, and Logistic Regression for predictive modeling.
+            Evaluation of model performance using metrics such as accuracy, precision, recall, and F1 score to ensure robust results.
+            Insights drawn from exploratory data analysis (EDA) to understand key features influencing disease detection.
+          
+          The project demonstrates a comprehensive pipeline for analyzing medical datasets and applying advanced machine learning techniques to assist in early detection of Parkinson's Disease, providing valuable tools for healthcare advancements.
+        </p>
+        <ul class="project-tags">
+          <li>Python</li>
+          <li>Machine Learning</li>
+          <li>Scikit-Learn</li>
+          <li>Pandas</li>
+          <li>NumPy</li>
+          <li>Matplotlib</li>
+          <li>Seaborn</li>
+          <li>Data Visualization</li>
+          <li>Data Analysis</li>
+          <li>Healthcare</li>
+          <li>AI in Medicine</li>
+          <li>Supervised Learning</li>
+          <li>Classification Models</li>
+          <li>Feature Engineering</li>
+          <li>Exploratory Data Analysis (EDA)</li>
+          <li>Data Preprocessing</li>
+          <li>Support Vector Machines (SVM)</li>
+          <li>Logistic Regression</li>
+ 
+          
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nawres2020/parkinson-s-disease-detection/tree/main" target="_blank" rel="noopener">Source Code</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="face-recognition" class="container">
+  <h2 class="subsection-title">Face Recognition Using Eigenfaces</h2>
+  <div class="main-text">
+    <div class="project">
+      <div class="project-images">
+        <img src="./static/images/projects/eig1.png" alt="Image 1">
+        <img src="./static/images/projects/eig2.png" alt="Image 2">
+        <img src="./static/images/projects/eig3.png" alt="Image 3">
+      </div>
+      <div class="project-text">
+        <p>
+          This project implemented a face recognition system using Principal Component Analysis (PCA) to reduce dimensionality and extract key features from facial images. The system is designed as a foundational step to integrate PCA-based face detection into a larger video surveillance system, enabling real-time identification of individuals.
+        </p>
+        <ul class="project-tags">
+          <li>Python</li>
+          <li>PCA</li>
+          <li>SVM</li>
+          <li>Scikit-learn</li>
+          <li>Jupyter Notebook</li>
+          <li>Olivetti Dataset</li>
+          <li>Machine Learning</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nawres2020/face-recognition-using-eigenfaces" target="_blank" rel="noopener">Source Code</a>
+          <a href="https://medium.com/@naouresatidel.hamrouni/face-recognition-using-eigenfaces-39b910aeb2a9" target="_blank" rel="noopener">Article</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="video-surveillance" class="container">
+  <h2 class="subsection-title">Face Detection and Identification for Video Surveillance</h2>
+  <div class="main-text">
+    <div class="project">
+
+    <div class="project">
+      <div class="project-text">
+        <p>
+          Developed a real-time face detection and identification system for video surveillance to monitor and identify individuals in recorded footage. Leveraged Convolutional Neural Networks (CNNs) and pre-trained models to detect faces from both images and video streams with high accuracy. The project features a pipeline to track and identify individuals, determining presence and attendance in surveillance scenarios, optimized for real-time processing and large-scale applications.
+        </p>
+        <ul class="project-tags">
+          <li>Python</li>
+          <li>OpenCV</li>
+          <li>TensorFlow</li>
+          <li>CNN</li>
+          <li>Deep Learning</li>
+          <li>Video Processing</li>
+          <li>Real-Time Analysis</li>
+        </ul>
+        <div class="project-links">
+          <a href="#" target="_blank" rel="noopener">Source Code</a>
+          <a href="#" target="_blank" rel="noopener">Project Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="image-processing" class="container">
+  <h2 class="subsection-title">Image Processing</h2>
+  <div class="main-text">
+    <div class="project">
+      <div class="project-images">
+        <img src="./static/images/projects/pro1.png" alt="Image 2">
+        <img src="./static/images/projects/pro2.png" alt="Image 3">
+        <img src="./static/images/projects/pro3.png" alt="Image 4">
+        <img src="./static/images/projects/pro4.png" alt="Image 5">
+        <img src="./static/images/projects/pro4.png" alt="Image 5">
+
+      </div>
+      <div class="project-text">
+        <p>
+          This project developed transformations including geometric adjustments (scaling, rotation), image enhancement (contrast adjustment, sharpening), and noise reduction (Gaussian smoothing, median filtering). It also utilized morphological operations like erosion, dilation, and gradient analysis for structural and shape-based image analysis.
+        </p>
+        <ul class="project-tags">
+          <li>Python</li>
+          <li>Jupyter Notebook</li>
+          <li>OpenCV</li>
+          <li>AI</li>
+          <li>TensorFlow</li>
+          <li>Computer Vision</li>
+          <li>Deep Learning</li>
+          <li>Data Augmentation</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://github.com/Nawres2020/Image-Processing" target="_blank" rel="noopener">Source Code</a>
+          <a href="https://www.linkedin.com/feed/update/urn:li:activity:7281359224247324672/" target="_blank" rel="noopener">Linkedin</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="llm-fine-tuning" class="container">
+  <h2 class="subsection-title">Fine-Tuning Large Language Models (LLMs)</h2>
+  <div class="main-text">
+    <div class="project">
+      <div class="project-images">
+        <img src="./static/images/projects/llm.png" alt="Image 1">
+        <img src="./static/images/projects/llm2.png" alt="Image 2">
+      </div>
+      <div class="project-text">
+        <p>
+          This project developed a pipeline to fine-tune large language models (LLMs) using the Hugging Face Transformers library for specific NLP tasks. Implemented transfer learning techniques to adapt pre-trained LLMs to domain-specific datasets, enhancing their performance on targeted applications. Additionally, processed and cleaned datasets using techniques such as tokenization, padding, and sequence truncation for efficient training.
+        </p>
+        <ul class="project-tags">
+          <li>Python</li>
+          <li>Hugging Face Transformers</li>
+          <li>NLP</li>
+          <li>Deep Learning</li>
+          <li>Fine-Tuning</li>
+          <li>BERT</li>
+        </ul>
+        <div class="project-links">
+          <a href="https://www.kaggle.com/code/nawreshamrouni/finetune-llms" target="_blank" rel="noopener">Source Code</a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+  </main>
+  <div class="page-nav container">
+    <a href="about">&#8592; About</a>
+    <a href="articles.html"> Articles &#8594;</a>
+
+  </div>
+  <div class="wave-border top">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" role="presentation">
+      <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+        style="stroke: none; fill: var(--shade-100)"></path>
+      <path class="neon-path" d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98"
+        style="stroke: var(--neon-color);fill: none;"></path>
+    </svg>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="social-media">
+        <a href="https://github.com/Nawres2020" title="Github">
+                      <i class="demo-icon icon-github-circled" aria-hidden="true"></i>
+          <span class="visually-hidden">Github</span>
+        </a>
+        <a href="https://www.kaggle.com/nawreshamrouni" title="Kaggle">
+          <i class="fas fa-database" aria-hidden="true"></i>
+          <span class="visually-hidden">Kaggle</span>
+        </a>
+        <a href="https://medium.com/@naouresatidel.hamrouni" title="Medium">
+          <i class="demo-icon icon-medium" aria-hidden="true"></i>
+          <span class="visually-hidden">Medium</span>
+        </a>
+        <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/" title="LinkedIn">
+          <i class="demo-icon icon-linkedin" aria-hidden="true"></i>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+      </div>
+      <div class="copyright">
+        &copy; designed & built by <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/">Naoures Hamrouni</a> <span
+          class="heart">&hearts;</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<script src="./static/js/index.js"></script>
+
+</html>
+
+<style>
+.project-tags {
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping for multiple tags */
+  gap: 10px; /* Decrease spacing between tags */
+  margin-top: 15px; /* Slightly reduce space above the tags */
+}
+
+.project-tags li {
+  font-size: 0.9rem; /* Smaller font size */
+  font-weight: normal; /* Less emphasis */
+  background-color: var(--secondary-color); /* Theme-specific background for tags */
+  color: var(--background-color); /* Theme-specific text color for contrast */
+  padding: 5px 10px; /* Reduce padding for a compact appearance */
+  border-radius: 5px; /* Maintain smooth rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease; /* Smooth hover animation */
+}
+
+.project-tags li:hover {
+  transform: scale(1.05); /* Subtle zoom effect on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly enhanced shadow on hover */
+  cursor: pointer; /* Change cursor to pointer */
+}
+
+.section-title {
+  font-family: 'Arial', sans-serif; /* Choose a clean or custom font */
+  font-size: 2.5rem; /* Adjust size for emphasis */
+  font-weight: bold; /* Make the title stand out */
+  color: var(--text-color); /* Dynamically adapt text color */
+  text-align: center; /* Center-align the title */
+  margin-bottom: 20px; /* Add spacing below */
+  position: relative; /* For decorative elements */
+}
+
+.section-title .title-icon {
+  font-size: 2rem; /* Adjust icon size relative to the text */
+  color: var(--secondary-color); /* Use theme-specific color for the icon */
+  margin-left: 10px; /* Add spacing between the text and the icon */
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 50px; /* Decorative underline */
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--secondary-color),
+    var(--shade-100)
+  ); /* Gradient effect from theme colors */
+  margin: 10px auto 0; /* Center underline and space */
+  border-radius: 5px; /* Smooth corners */
+}
+
+
+
+
+
+
+  /* General Section Styling */
+  section {
+    width: var(--section-width, 50%);
+    max-width: var(--max-section-width, 1600px);
+    padding: var(--section-padding, 30px) 0;
+    margin: 0 auto;
+}
+
+  .container {
+    max-width: 1200px; /* Limit the width for readability */
+    margin: 0 auto; /* Center content */
+  }
+
+  .subsection-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px; /* Reduce space below title */
+    text-align: center;
+  }
+
+  .main-text {
+    margin-top: 10px;
+    text-align: center; /* Center-align images and text */
+  }
+
+ /* Project Images Container */
+.project-images {
+    display: grid; /* Use grid for better control */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 10px; /* Adjust spacing between images */
+    justify-items: center; /* Center images within their grid cells */
+    align-items: center; /* Vertically align images */
+    margin: 20px auto; /* Center the container with spacing */
+    max-width: 1200px; /* Limit overall container width */
+}
+
+/* Individual Images */
+.project-images img {
+    width: 100%; /* Make images fill their grid cells */
+    max-width: 100%; /* Ensure images do not exceed container size */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Rounded corners for a modern look */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth effects */
+}
+
+.project-images img:hover {
+    transform: scale(1.1); /* Slight zoom effect on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+
+  /* Adjust spacing between projects */
+  .project {
+    margin-bottom: 40px; /* Reduce space between projects */
+  }
+
+ 
+</style>
+
+
+
+
+<script>
+  let currentIndex = 0;
+  const slides = document.querySelectorAll('.slideshow img');
+  const dots = document.querySelectorAll('.dot');
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+      dots[i].classList.toggle('active', i === index);
+    });
+    currentIndex = index;
+  }
+
+  function nextSlide() {
+    const nextIndex = (currentIndex + 1) % slides.length;
+    showSlide(nextIndex);
+  }
+
+  // Automatically change slides every 3 seconds
+  setInterval(nextSlide, 3000);
+</script>

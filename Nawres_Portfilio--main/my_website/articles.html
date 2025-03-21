@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a324c">
+  <meta name="msapplication-navbutton-color" content="#1a324c">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="I write the type of articles I would want to read when trying to understand a new concept or develop a
+    skill.">
+  <link rel="stylesheet" href="static/css/main.css" />
+  <link rel="stylesheet" href="static/css/page.css" />
+  <link rel="stylesheet" href="static/css/articles.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="static/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="static/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="static/images/favicon/favicon-16x16.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y3FM96129M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Y3FM96129M');
+  </script>
+
+  <title>Naoures Hamrouni: Articles</title>
+</head>
+
+<body>
+  <a href="#main" class="skip-to-main-content">Skip to main content</a>
+  <nav class="visible">
+    <div class="container">
+      <a href="/" class="nav-logo" title="Back to Homepage">
+        Naoures Hamrouni
+      </a>
+      <div class="nav-links">
+        <a href="about" class="link">about</a>
+        <a href="projects" class="link">projects</a>
+        <a href="articles" class="link">articles</a>
+        <div class="social-media">
+          <a href="https://github.com/Nawres2020" title="Github">
+                        <i class="demo-icon icon-github-circled" aria-hidden="true"></i>
+            <span class="visually-hidden">Github</span>
+          </a>
+          <a href="https://www.kaggle.com/nawreshamrouni" title="Kaggle">
+            <i class="fas fa-database" aria-hidden="true"></i> 
+            <span class="visually-hidden">Kaggle</span>
+          </a>
+          <a href="https://medium.com/@naouresatidel.hamrouni" title="Medium">
+            <i class="demo-icon icon-medium" aria-hidden="true"></i>
+            <span class="visually-hidden">Medium</span>
+          </a>
+          <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/" title="LinkedIn">
+            <i class="demo-icon icon-linkedin" aria-hidden="true"></i>
+            <span class="visually-hidden">LinkedIn</span>
+          </a>
+        </div>
+      </div>
+      <div class="nav-controls">
+        <button id="menu-display" title="Show Menu" class="hamburger">
+
+        </button>
+        <button id="theme-display" title="Select a color scheme" class="control">
+          <i aria-hidden="true" class="demo-icon icon-cog"></i>
+          <span class="visually-hidden">Select a color scheme</span>
+        </button>
+      </div>
+      <div class="theme-container">
+        <button class="light theme-select" id="light-select" onclick="setTheme('light')" aria-label="Set light theme">
+          <div class="theme-label">
+            Light
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="dark theme-select" id="dark-select" onclick="setTheme('dark')"
+          onkeydown="(e) => setThemeKey(e, 'dark')" aria-label="Set dark theme">
+          <div class="theme-label">
+            Dark
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="brown theme-select" id="brown-select" onclick="setTheme('brown')" aria-label="Set brown theme">
+          <div class="theme-label">
+            Brown
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="green theme-select" id="green-select" onclick="setTheme('green')" aria-label="Set green theme">
+          <div class="theme-label">
+            Green
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="pink theme-select" id="pink-select" onclick="setTheme('pink')" aria-label="Set pink theme">
+          <div class="theme-label">
+            Pink
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+        <button class="neon theme-select" id="neon-select" onclick="setTheme('neon')" aria-label="Set pink theme">
+          <div class="theme-label">
+            Neon
+          </div>
+          <div class="theme">
+            <div class="color background"></div>
+            <div class="color shade-100"></div>
+            <div class="color shade-300"></div>
+            <div class="color shade-500"></div>
+            <div class="color text"></div>
+          </div>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <main id="main">
+    <section class="container">
+      <h1 class="section-title">Articles <span class="title-icon">&#128466;</span></h1>
+      <p class="section-subtitle">
+        <li> In my master’s studies , I started writing academic articles, which deepened my passion for documenting and sharing knowledge. </li>
+        <li> Now, I enjoy writing about my small projects in both Kaggle and Github, focusing on detailed explanations of coding steps and implementation. </li>
+        <li>Even in my professional work, I have a habit of creating thorough documentation for code implementations to ensure that anyone following me can easily understand and build upon it.</li>
+      </p>
+    </section>
+    <section id="articles" class="container">
+      <input type="radio" id="all" name="tag" value="all" checked>
+      </input>
+      <input type="radio" id="Computer_vision" name="tag" value="Computer_vision">
+      </input>
+      <input type="radio" id="javascript" name="tag" value="javascript">
+      </input>
+      <input type="radio" id="conferences" name="tag" value="conferences">
+      </input>
+      <aside class="post-tags">
+        <div class="post-tag">
+          <label for="all" data-post="all">
+            All (4)
+          </label>
+        </div>
+        <div class="post-tag">
+          <label for="Computer_vision" data-post="Computer_vision">
+            Computer vision (3)
+          </label> 
+        </div>
+        <div class="post-tag">
+          <label for="javascript" data-post="javascript">
+
+          </label>
+        </div>
+        <div class="post-tag">
+          <label for="conferences" data-post="conferences">
+            <!--Conferences (1)-->
+          </label>
+        </div>
+      </aside>
+      <div class="main-content">
+        <div class="article" data-post="Computer_vision">
+          <h2 class="article-title">
+            <a href="https://medium.com/@naouresatidel.hamrouni/face-recognition-using-eigenfaces-39b910aeb2a9" target="_blank"
+              rel="noopener">
+              Face Recognition Using Eigenfaces
+            </a>
+          </h2>
+          <div class="article-description">
+            <p>
+              This article explores face recognition using the Eigenfaces method, which employs PCA for dimensionality reduction and feature extraction. 
+              It details dataset preparation, implementation, classifier training, and evaluation, achieving high accuracy with SVM on the Olivetti Faces dataset.
+            </p>
+            <p class="details">Jan 11, 2025 · 6 min read</p>
+          </div>
+        </div>
+        <div class="article" data-post="Computer_vision">
+          <h2 class="article-title">
+            <a href="https://medium.com/@naouresatidel.hamrouni/enhancing-image-restoration-using-feature-descriptors-95847f2a75b2" target="_blank"
+              rel="noopener">
+              Enhancing Image Restoration Using Feature Descriptors
+            </a>
+          </h2>
+          <div class="article-description">
+            <p>
+              This article presents a method for image restoration using feature descriptors like SIFT and ORB, combined with robust algorithms like RANSAC for precise patch alignment. 
+              The workflow enables seamless correction of corrupted images, offering valuable applications in computer vision and digital forensics.
+            </p>
+            <p class="details">Jun 25, 2024 · 5 min read</p>
+          </div>
+        </div>
+        <div class="article" data-post="Computer_vision">
+          <h2 class="article-title">
+            <a href="https://medium.com/@naouresatidel.hamrouni/computer-vision-template-matching-ad3218d0aa7a" target="_blank"
+              rel="noopener">
+              Template Matching
+             </a>
+          </h2>
+          <div class="article-description">
+            <p>
+              This article introduces template matching, a fundamental computer vision technique using OpenCV in Python to locate predefined templates in images.
+               The step-by-step example highlights its applications in fields like medical imaging, robotics, and vehicle tracking.
+            </p>
+            <p class="details">Jun 25, 2024 · 4 min read</p>
+          </div>
+        </div>
+
+        <div class="article" data-post="Computer_vision">
+          <h2 class="article-title">
+            <a href="https://github.com/Nawres2020/LLM-Classification-Finetuning" target="_blank"
+              rel="noopener">
+              I tried to speak about 2 approches to solve text classification problem in a Kaggle competition
+            </a>
+          </h2>
+          <div class="article-description">
+            <p>
+              Two approaches to solving a text classification problem in the context of a Kaggle competition focused on LLM fine-tuning. 
+              The competition aims to encourage participants to experiment with various strategies to optimize language models for specific downstream tasks, showcasing both performance improvements and practical trade-offs.            
+            </p>
+            <p class="details">Jan 03, 2025 · 5 min read</p>
+          </div>
+        </div>
+      
+        </div>
+      </div>
+    </section>
+  </main>
+  <div class="page-nav container">
+    <a href="projects.html">&#8592; Project</a>
+  </div>
+  <div class="wave-border top">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;" role="presentation">
+      <path d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+        style="stroke: none; fill: var(--shade-100)"></path>
+      <path class="neon-path" d="M0.00,49.98 C149.99,150.00 349.20,-49.98 500.00,49.98"
+        style="stroke: var(--neon-color);fill: none;"></path>
+    </svg>
+  </div>
+  <footer>
+    <div class="container">
+      <div class="social-media">
+        <a href="https://github.com/Nawres2020" title="Github">
+                      <i class="demo-icon icon-github-circled" aria-hidden="true"></i>
+          <span class="visually-hidden">Github</span>
+        </a>
+        <a href="https://www.kaggle.com/nawreshamrouni" title="Kaggle">
+          <i class="fas fa-database" aria-hidden="true"></i>
+          <span class="visually-hidden">Kaggle</span>
+        </a>
+        <a href="https://medium.com/@naouresatidel.hamrouni" title="Medium">
+          <i class="demo-icon icon-medium" aria-hidden="true"></i>
+          <span class="visually-hidden">Medium</span>
+        </a>
+        <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/" title="LinkedIn">
+          <i class="demo-icon icon-linkedin" aria-hidden="true"></i>
+          <span class="visually-hidden">LinkedIn</span>
+        </a>
+      </div>
+      <div class="copyright">
+        &copy; designed & built by <a href="https://www.linkedin.com/in/nawres-hamrouni-3712a7194/">Naoures Hamrouni</a> <span
+          class="heart">&hearts;</span>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<script src="./static/js/index.js"></script>
+
+</html>
